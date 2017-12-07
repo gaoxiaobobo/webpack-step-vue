@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 const baseConfig = require('./base')
 const root = path.resolve(__dirname, '..')
 
@@ -13,7 +14,11 @@ module.exports = merge(baseConfig, {
     }),
     new webpack.DllReferencePlugin({
       manifest: require('../build/vendor-manifest.json'),
-      context:__dirname
+      context: __dirname
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname,"../build/vendor.dll.js"),
+      includeSourcemap: false  //如果没有用hash值就选false
     }),
   ]
 })

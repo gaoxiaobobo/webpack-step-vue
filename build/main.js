@@ -153,7 +153,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   data: function data() {
-    return { message: 'Hello Vue.js!11' };
+    return { message: 'Hello Vue.js!12' };
   }
 };
 

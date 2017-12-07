@@ -4,6 +4,6 @@
 
 <script>
   export default {
-    data: () => ({message: 'Hello Vue.js!11'})
+    data: () => ({message: 'Hello Vue.js!12'})
   }
 </script>
