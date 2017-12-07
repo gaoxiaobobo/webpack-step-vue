@@ -4,7 +4,7 @@ const root = path.resolve(__dirname, '..') // 项目的根目录绝对路径
 module.exports = {
   entry: path.join(root, 'src/main.js'),  // 入口文件路径
   output: {
-    path: path.join(root, 'dist'),  // 出口目录
+    path: path.join(root, 'build'),  // 出口目录
     filename: 'main.js'  // 出口文件名
   },
   resolve: {
@@ -16,7 +16,6 @@ module.exports = {
       store: path.join(root, 'src/store')
     },
     extensions: [ '.js', '.vue'], // 引用js和vue文件可以省略后缀名
-    // fallback: [path.join(root, 'node_modules')] // 找不到的模块会尝试在这个数组的目录里面再寻找
   },
   // resolveLoader: {
   //   fallback: [path.join(root, 'node_modules')] // 找不到的loader模块会尝试在这个数组的目录里面再寻找

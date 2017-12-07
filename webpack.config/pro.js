@@ -10,6 +10,10 @@ module.exports = merge(baseConfig, {
     new HtmlWebpackPlugin({
       template: path.join(root, 'index.html'), // 模板文件
       inject: 'body' // js的script注入到body底部
-    })
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: require('../build/vendor-manifest.json'),
+      context:__dirname
+    }),
   ]
 })

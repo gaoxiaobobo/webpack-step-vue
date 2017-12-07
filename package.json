@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "webpack -v",
     "//": "dev webpack src/main.js dist/main.js",
     "dev": "webpack-dev-server --config webpack.config/dev.js",
-    "build": "webpack --config webpack.config/pro.js"
+    "build": "webpack --config webpack.config/pro.js",
+    "build:vue-dll": "webpack --config webpack.config/vue-dll.config.js"
   },
   "keywords": [],
   "author": "",
