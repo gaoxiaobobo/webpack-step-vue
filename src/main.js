@@ -12,6 +12,6 @@ import Hello2 from './components2/Hello2.vue'
 
 new Vue({
   el: '#app',
-  template: '<div><hello></hello><Hello2></Hello2></div>',
+  template: '<div><hello></hello><br><Hello2></Hello2></div>',
   components: {Hello,Hello2}
 })

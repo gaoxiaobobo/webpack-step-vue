@@ -8,7 +8,10 @@
     "//": "dev webpack src/main.js dist/main.js",
     "dev": "webpack-dev-server --config webpack.config/dev.js",
     "build": "webpack --config webpack.config/pro.js",
-    "build:vue-dll": "webpack --config webpack.config/vue-dll.config.js"
+    "build:vue-dll": "webpack --config webpack.config/vue-dll.config.js",
+    "build:com1-dll": "webpack --config webpack.config/com1-dll.config.js",
+    "build:com2-dll": "webpack --config webpack.config/com2-dll.config.js"
+
   },
   "keywords": [],
   "author": "",

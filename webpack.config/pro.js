@@ -16,8 +16,24 @@ module.exports = merge(baseConfig, {
       manifest: require('../build/vendor-manifest.json'),
       context: __dirname
     }),
+    new webpack.DllReferencePlugin({
+      manifest: require('../build/com1-manifest.json'),
+      context: __dirname
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: require('../build/com2-manifest.json'),
+      context: __dirname
+    }),
     new AddAssetHtmlPlugin({
       filepath: path.resolve(__dirname,"../build/vendor.dll.js"),
+      includeSourcemap: false  //如果没有用hash值就选false
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname,"../build/com1.dll.js"),
+      includeSourcemap: false  //如果没有用hash值就选false
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname,"../build/com2.dll.js"),
       includeSourcemap: false  //如果没有用hash值就选false
     }),
   ]
