@@ -4,6 +4,6 @@
 
 <script>
   export default {
-    data: () => ({message: 'Hello Vue.js!-bb'})
+    data: () => ({message: 'Hello Vue.js!'})
   }
 </script>

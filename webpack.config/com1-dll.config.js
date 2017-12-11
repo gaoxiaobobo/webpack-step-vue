@@ -1,12 +1,13 @@
 const path = require('path');
 const root = path.resolve(__dirname, '..') // 项目的根目录绝对路径
 const webpack = require('webpack');
+const glob = require("glob");
 
-const vendors = [
-    path.join(root, 'src/components/all'),
-    // 'src/components/all',
-    // ...其它库
-];
+//入口使用通配符
+const vueFiles = glob.sync("./src/components/**/*.vue")
+
+console.log(vueFiles)
+
 
 module.exports = {
     resolve: {
@@ -24,7 +25,7 @@ module.exports = {
         library: '[name]',
     },
     entry: {
-        "com1": vendors, //key is [name],不要使用连字符 -,. 否则会解析成属性
+        "com1": vueFiles
     },
     plugins: [
         new webpack.DllPlugin({
