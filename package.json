@@ -17,7 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.5.9"
+    "vue": "^2.5.9",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "add-asset-html-webpack-plugin": "^2.1.2",
