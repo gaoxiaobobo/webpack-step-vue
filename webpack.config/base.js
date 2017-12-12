@@ -25,7 +25,17 @@ module.exports = {
   module: { // 配置loader
     loaders: [
       {test: /\.vue$/, loader: 'vue-loader'}, // 所有.vue结尾的文件，使用vue-loader
-      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/} // .js文件使用babel-loader，切记排除node_modules目录
+      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},// .js文件使用babel-loader，切记排除node_modules目录
+      {
+          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+          use: [{
+              loader: "url-loader",
+              options: {
+                  limit: 10000,
+                  name: 'images/[name].[hash:7].[ext]'    // 将图片都放入images文件夹下，[hash:7]防缓存
+              }
+          }]
+      },
     ]
   }
 }
