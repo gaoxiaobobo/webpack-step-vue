@@ -11,12 +11,14 @@
     "build:vue-dll": "webpack --config webpack.config/vue-dll.config.js",
     "build:com1-dll": "webpack --config webpack.config/com1-dll.config.js",
     "build:com2-dll": "webpack --config webpack.config/com2-dll.config.js",
-    "build:all-dll": "webpack --config webpack.config/all-dll.config.js"
+    "build:all-dll": "webpack --config webpack.config/all-dll.config.js",
+    "build:view-dll": "webpack --config webpack.config/view-dll.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lazyload-js": "^1.0.0",
     "vue": "^2.5.9",
     "vue-router": "^3.0.1"
   },

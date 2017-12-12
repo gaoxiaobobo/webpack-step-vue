@@ -24,6 +24,7 @@ import routerConfig from './router';
 Vue.use(VueRouter);
 
 var router = new VueRouter(routerConfig)
+
 new Vue({
     el: '#app',
     router: router,

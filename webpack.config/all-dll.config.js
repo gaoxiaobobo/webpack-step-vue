@@ -1,28 +1,24 @@
-const path = require('path');
-const root = path.resolve(__dirname, '..') // 项目的根目录绝对路径
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const baseConfig = require('./base')
+const root = path.resolve(__dirname, '..')
+
+const glob = require("glob");
+//入口使用通配符
+const viewFiles = glob.sync("./src/views/**/*.vue")
+const com1 = glob.sync("./src/components/**/*.vue")
+const com2 = glob.sync("./src/components2/**/*.vue")
+const main = ['./src/app.vue','./src/router.js','./src/main.js']
 
 
-module.exports = {
-    resolve: {
-        extensions: [".vue", '.js']
-    },
-    module: { // 配置loader
-        loaders: [{
-                test: /\.vue$/,
-                loader: 'vue-loader'
-            }, // 所有.vue结尾的文件，使用vue-loader
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            } // .js文件使用babel-loader，切记排除node_modules目录
-        ]
-    },
+module.exports = merge(baseConfig, {
     entry: {
         "vendor": [ "vue"],
-        "com1": ["./src/components/all"],
-        "com2": ["./src/components2/all"]
+        "com1": com1,
+        "com2": com2,
+        "view": viewFiles,
+        "main": main
     },
     output: {
         path: path.join(root, 'build'),
@@ -36,4 +32,4 @@ module.exports = {
             context: __dirname,
         }),
     ],
-};
+});

@@ -1,6 +1,7 @@
 const path = require('path')
 const root = path.resolve(__dirname, '..') // 项目的根目录绝对路径
 
+
 module.exports = {
   entry: path.join(root, 'src/main.js'),  // 入口文件路径
   output: {
